@@ -43,12 +43,11 @@ def visualize_selected_words(counter, selected_words):
                        count in counter.items() if word in selected_words}
     words, counts = zip(*filtered_counts.items())
     plt.figure(figsize=(10, 5))
-    plt.bar(words, counts, color='blue')
-    plt.xlabel('Слова')
-    plt.ylabel('Частота')
+    plt.barh(words, counts, color='blue')
+    plt.xlabel('Частота')
+    plt.ylabel('Слова')
     plt.title('10 найбільш вживаних слів')
-    plt.xticks(rotation=45)
-    plt.ylim(0, max(counts) + 50)
+    plt.xlim(0, max(counts) + 50)
     plt.show()
 
 
